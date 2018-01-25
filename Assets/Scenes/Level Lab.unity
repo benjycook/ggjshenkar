@@ -224,7 +224,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4621608515181610, guid: 3bfa1cc5a698b4359a71e0394b025be4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4621608515181610, guid: 3bfa1cc5a698b4359a71e0394b025be4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -496,12 +496,17 @@ Prefab:
     - target: {fileID: 114518479723538774, guid: cbd2f9df819f0468192411476fd2b265,
         type: 2}
       propertyPath: speedBall
-      value: 14
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 114098213443997056, guid: cbd2f9df819f0468192411476fd2b265,
         type: 2}
       propertyPath: forceJump
-      value: 5
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098213443997056, guid: cbd2f9df819f0468192411476fd2b265,
+        type: 2}
+      propertyPath: gravityScale
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbd2f9df819f0468192411476fd2b265, type: 2}
