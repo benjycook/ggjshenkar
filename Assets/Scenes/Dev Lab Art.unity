@@ -2146,18 +2146,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4719080844482918, guid: e81915b98d1634a4e858cf4cec651ee4, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.59756
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719080844482918, guid: e81915b98d1634a4e858cf4cec651ee4, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.59756
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719080844482918, guid: e81915b98d1634a4e858cf4cec651ee4, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.59756
-      objectReference: {fileID: 0}
     - target: {fileID: 1676189782631744, guid: e81915b98d1634a4e858cf4cec651ee4, type: 2}
       propertyPath: m_Name
       value: StationaryEnemy (1)
@@ -2786,7 +2774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1138896903
 Transform:
   m_ObjectHideFlags: 0
