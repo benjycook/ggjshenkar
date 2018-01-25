@@ -8,15 +8,20 @@ public class Shoot : MonoBehaviour {
     public float speedBall = 5.0f;
     public float bulletLifetime = 10;
     public Animator anim;
-	// Use this for initialization
-	void Start () {
-		
-	}
+
+    public AudioSource audioSource;
+    public AudioClip shootAudio;
+    // Use this for initialization
+    void Start () {
+        audioSource = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick3Button0))
         {
+            audioSource.clip = shootAudio;
+            audioSource.Play();
             anim.SetTrigger("shoot");
             GameObject ballPrefab =  Instantiate(ball, aim.position, ball.transform.rotation);
             ballPrefab.GetComponent<Rigidbody>().velocity = Vector3.right * speedBall;

@@ -13,6 +13,9 @@ public class Move : MonoBehaviour {
     public float gravityScale = 10f;
     public float forceJump = 5f;
     public Animator anim;
+    public AudioSource audioSource;
+    public AudioClip jumpAudio;
+    public AudioClip stopAudio;
 
 
 
@@ -23,6 +26,7 @@ public class Move : MonoBehaviour {
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rigid = GetComponent<Rigidbody>();
     }
 
@@ -30,7 +34,9 @@ public class Move : MonoBehaviour {
     {
 
 		if (Input.GetKey (KeyCode.Alpha0) || Input.GetKey (KeyCode.Joystick2Button3)) {
-			rigid.velocity = new Vector3 (0, rigid.velocity.y, rigid.velocity.z);
+            audioSource.clip = stopAudio;
+            audioSource.Play();
+            rigid.velocity = new Vector3 (0, rigid.velocity.y, rigid.velocity.z);
 			inFreeze = true;
 		} else {
 			inFreeze = false;
@@ -41,6 +47,8 @@ public class Move : MonoBehaviour {
         if ((Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Joystick1Button1)) && isGrounded)
         {
             //rigid.velocity += new Vector3(0, 1, 0) * forceJump;
+            audioSource.clip = jumpAudio;
+            audioSource.Play();
             anim.SetTrigger("jump");
 			rigid.AddForce (Vector3.up * forceJump,ForceMode.VelocityChange);
 			isGrounded = false;
