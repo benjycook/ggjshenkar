@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33972245562953922}
   - component: {fileID: 65464635362419030}
   - component: {fileID: 23487744026687260}
+  - component: {fileID: 136595311165543280}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Platform
@@ -63,8 +64,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716029028842640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.31, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 45.087368, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4113200471949314}
@@ -118,7 +119,20 @@ BoxCollider:
   m_GameObject: {fileID: 1053180745285554}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136595311165543280
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053180745285554}
+  m_Material: {fileID: 13400000, guid: 406d60fb7ba72472f90f23c8055e3970, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2416414
+  m_Height: 1.0206441
+  m_Direction: 0
+  m_Center: {x: 0.00000025670911, y: -0.5237653, z: 0}
