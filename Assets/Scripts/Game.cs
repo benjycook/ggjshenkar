@@ -33,6 +33,12 @@ public class Game : MonoBehaviour {
         {
             GameOver();
         }
+
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     public void Die()
