@@ -7,10 +7,12 @@ public class Move : MonoBehaviour {
     public Rigidbody rigid;
     //public float speed = 1;
     public bool isMove = true;
-    public float forceJump = 5f;
     public bool isGrounded = true;
+    public bool isFaile = false;
     public float speed = 3;
     public float gravityScale = 10f;
+    public float forceJump = 5f;
+
 
 
     Vector3 movement = Vector3.zero;
@@ -24,7 +26,11 @@ public class Move : MonoBehaviour {
     private void Update()
     {
         movement = Vector3.right * speed ;
-        rigid.velocity = new Vector3(movement.x, rigid.velocity.y, rigid.velocity.z);
+        if(!isFaile)
+        {
+            rigid.velocity = new Vector3(movement.x, rigid.velocity.y, rigid.velocity.z);
+        }
+       
 
         if (Input.GetKey(KeyCode.Alpha0) || Input.GetKey(KeyCode.Joystick2Button3))
         {
@@ -53,7 +59,7 @@ public class Move : MonoBehaviour {
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = false;
         }
@@ -63,6 +69,14 @@ public class Move : MonoBehaviour {
         if (collision.gameObject.CompareTag("ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Platform"))
+        {
+            isFaile = true;
         }
     }
 }
