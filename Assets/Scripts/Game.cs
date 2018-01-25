@@ -39,7 +39,7 @@ public class Game : MonoBehaviour {
     {
         lives--;
         // player.transform.position = Vector3.MoveTowards(transform.position, startPos, 10);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(currentScene);
     }
 
     public void AddCollectables()
@@ -50,7 +50,7 @@ public class Game : MonoBehaviour {
 
     public void GameOver()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(currentScene);
     }
 
     public void LoadNextLevel()
