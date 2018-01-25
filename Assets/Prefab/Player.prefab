@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4014379868254904}
   - component: {fileID: 33713886270885056}
-  - component: {fileID: 65240541225836630}
   - component: {fileID: 23720981836307560}
   - component: {fileID: 114098213443997056}
   - component: {fileID: 54565756011356354}
   - component: {fileID: 114518479723538774}
+  - component: {fileID: 65104651679057474}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 33264147076834966}
   - component: {fileID: 136427243491399002}
   - component: {fileID: 23519212553301782}
+  - component: {fileID: 65635768513870062}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -199,7 +200,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!65 &65240541225836630
+--- !u!65 &65104651679057474
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -211,6 +212,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65635768513870062
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237081262548988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.67, y: 2, z: 1.0000001}
+  m_Center: {x: 0, y: -0.52, z: -0.00000008940696}
 --- !u!114 &114098213443997056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,10 +237,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigid: {fileID: 54565756011356354}
   isMove: 1
-  forceJump: 9
-  isGrounded: 0
-  speed: 9
+  isGrounded: 1
+  isFaile: 0
+  speed: 5
   gravityScale: 9
+  forceJump: 9
 --- !u!114 &114518479723538774
 MonoBehaviour:
   m_ObjectHideFlags: 1
