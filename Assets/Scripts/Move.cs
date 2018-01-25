@@ -7,10 +7,11 @@ public class Move : MonoBehaviour {
     public Rigidbody rigid;
     //public float speed = 1;
     public bool isMove = true;
-    public float forceJump = 5f;
     public bool isGrounded = true;
     public float speed = 3;
     public float gravityScale = 10f;
+    public float forceJump = 5f;
+
 
 
     Vector3 movement = Vector3.zero;
@@ -24,9 +25,12 @@ public class Move : MonoBehaviour {
     private void Update()
     {
         movement = Vector3.right * speed ;
+        
         rigid.velocity = new Vector3(movement.x, rigid.velocity.y, rigid.velocity.z);
+        
+       
 
-        if (Input.GetKey(KeyCode.Alpha0) || Input.GetKey(KeyCode.Joystick1Button3))
+        if (Input.GetKey(KeyCode.Alpha0) || Input.GetKey(KeyCode.Joystick2Button3))
         {
             rigid.velocity = new Vector3(0, rigid.velocity.y, rigid.velocity.z);
         }
@@ -36,11 +40,7 @@ public class Move : MonoBehaviour {
             rigid.velocity += new Vector3(0, 1, 0) * forceJump;
         }
 
-        if (rigid.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button1)))
-        {
-            rigid.velocity += new Vector3(0, -5, 0);
-        }
-
+	
 
 
     }
@@ -53,16 +53,18 @@ public class Move : MonoBehaviour {
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = false;
         }
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = true;
         }
     }
+
+    
 }

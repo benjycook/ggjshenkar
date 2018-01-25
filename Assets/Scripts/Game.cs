@@ -36,7 +36,8 @@ public class Game : MonoBehaviour {
     public void Die()
     {
         lives--;
-        player.transform.position = Vector3.MoveTowards(transform.position, startPos, 10);
+        // player.transform.position = Vector3.MoveTowards(transform.position, startPos, 10);
+        SceneManager.LoadScene(0);
     }
 
     public void AddCollectables()
