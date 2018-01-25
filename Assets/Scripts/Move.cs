@@ -36,6 +36,8 @@ public class Move : MonoBehaviour {
 			inFreeze = false;
 		}
 
+		anim.SetBool ("move", !inFreeze);
+
         if ((Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Joystick1Button1)) && isGrounded)
         {
             //rigid.velocity += new Vector3(0, 1, 0) * forceJump;
