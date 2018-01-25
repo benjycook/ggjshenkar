@@ -26,7 +26,7 @@ public class Move : MonoBehaviour {
         movement = Vector3.right * speed ;
         rigid.velocity = new Vector3(movement.x, rigid.velocity.y, rigid.velocity.z);
 
-        if (Input.GetKey(KeyCode.Alpha0) || Input.GetKey(KeyCode.Joystick1Button3))
+        if (Input.GetKey(KeyCode.Alpha0) || Input.GetKey(KeyCode.Joystick2Button3))
         {
             rigid.velocity = new Vector3(0, rigid.velocity.y, rigid.velocity.z);
         }
