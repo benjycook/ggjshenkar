@@ -7,7 +7,7 @@ public class Game : MonoBehaviour {
 
     public static Game instance;
     public GameObject player;
-    Vector3 startPos;
+    public int currentScene;
 
     int lives = 3;
     int collectables = 0;
@@ -23,8 +23,10 @@ public class Game : MonoBehaviour {
 
     private void Start()
     {
-        startPos = player.transform.position;
+        Scene scene = SceneManager.GetActiveScene();
+        currentScene = scene.buildIndex;
     }
+
     private void Update()
     {
         if (lives == 0)
@@ -49,5 +51,10 @@ public class Game : MonoBehaviour {
     public void GameOver()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(currentScene + 1);
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Move : MonoBehaviour {
 
     public Rigidbody rigid;
-    //public float speed = 1;
     public bool isMove = true;
     public bool isGrounded = true;
     public float speed = 3;
@@ -27,9 +26,6 @@ public class Move : MonoBehaviour {
         movement = Vector3.right * speed ;
         
         rigid.velocity = new Vector3(movement.x, rigid.velocity.y, rigid.velocity.z);
-        
-       
-
         if (Input.GetKey(KeyCode.Alpha0) || Input.GetKey(KeyCode.Joystick2Button3))
         {
             rigid.velocity = new Vector3(0, rigid.velocity.y, rigid.velocity.z);
@@ -39,10 +35,6 @@ public class Move : MonoBehaviour {
         {
             rigid.velocity += new Vector3(0, 1, 0) * forceJump;
         }
-
-	
-
-
     }
 
     private void FixedUpdate()
@@ -58,6 +50,7 @@ public class Move : MonoBehaviour {
             isGrounded = false;
         }
     }
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Platform"))
