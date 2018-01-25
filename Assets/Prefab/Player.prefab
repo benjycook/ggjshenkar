@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093918134900216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.26, y: -0.38, z: 0}
+  m_LocalPosition: {x: -8.2, y: -0.38, z: 0}
   m_LocalScale: {x: 0.5975611, y: 0.5975611, z: 0.5975611}
   m_Children:
   - {fileID: 4122658950826308}
@@ -265,10 +265,9 @@ MonoBehaviour:
   rigid: {fileID: 54565756011356354}
   isMove: 1
   isGrounded: 1
-  isFaile: 0
-  speed: 5
-  gravityScale: 9
-  forceJump: 9
+  speed: 9
+  gravityScale: 42
+  forceJump: 15
 --- !u!114 &114518479723538774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,8 +281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1931512550533258, guid: 0e7549560efa23840b82fee79a0081df, type: 2}
   aim: {fileID: 4384898834255050}
-  speedBall: 5
-  bulletLifetime: 0.1
+  speedBall: 18
+  bulletLifetime: 0.3
 --- !u!135 &135550863057436398
 SphereCollider:
   m_ObjectHideFlags: 1
