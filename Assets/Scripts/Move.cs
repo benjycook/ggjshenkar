@@ -12,6 +12,7 @@ public class Move : MonoBehaviour {
 	public float accel = 100.0f;
     public float gravityScale = 10f;
     public float forceJump = 5f;
+    public Animator anim;
 
 
 
@@ -38,6 +39,7 @@ public class Move : MonoBehaviour {
         if ((Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Joystick1Button1)) && isGrounded)
         {
             //rigid.velocity += new Vector3(0, 1, 0) * forceJump;
+            anim.SetTrigger("jump");
 			rigid.AddForce (Vector3.up * forceJump,ForceMode.VelocityChange);
 			isGrounded = false;
         }
