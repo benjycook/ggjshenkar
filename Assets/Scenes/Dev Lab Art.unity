@@ -2740,7 +2740,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!136 &1068832018
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2767,7 +2766,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4014379868254904, guid: cbd2f9df819f0468192411476fd2b265, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 4014379868254904, guid: cbd2f9df819f0468192411476fd2b265, type: 2}
       propertyPath: m_LocalPosition.z
