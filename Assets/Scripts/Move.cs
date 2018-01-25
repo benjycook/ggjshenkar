@@ -66,7 +66,7 @@ public class Move : MonoBehaviour {
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = true;
         }
