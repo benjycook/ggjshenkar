@@ -14,12 +14,11 @@ public class Shoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             GameObject ballPrefab =  Instantiate(ball, aim.position, ball.transform.rotation);
             ballPrefab.GetComponent<Rigidbody>().velocity = Vector3.right * 10;
             Destroy(ballPrefab, bulletLifetime);
-
         }
     }
 }
