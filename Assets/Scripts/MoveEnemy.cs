@@ -7,7 +7,9 @@ public class MoveEnemy : MonoBehaviour {
     public float speed = 2.0f;
 
     public GameObject collTest;
-    
+
+    public bool isCloseToEnd = false;
+
 
     Vector3 movement = Vector3.zero;
     // Use this for initialization
@@ -18,20 +20,11 @@ public class MoveEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         movement = Vector3.right * speed;
+        rigid.velocity = new Vector3(movement.x, rigid.velocity.y, rigid.velocity.z);
 
-       
-        if (this.GetComponent<CheckIsGround>().isCloseToEnd)
+        if (isCloseToEnd)
         {
             rigid.velocity = new Vector3(movement.x * -1, rigid.velocity.y, rigid.velocity.z);
-            Vector3 flippedScale = new Vector3(transform.localScale.x*-1,transform.localScale.y,transform.localScale.z);
-            transform.localScale = flippedScale;
-            this.GetComponent<CheckIsGround>().isCloseToEnd = false;
         }
-        else
-        {
-            rigid.velocity = new Vector3(movement.x, rigid.velocity.y, rigid.velocity.z);
-        }
-
-
     }
 }
