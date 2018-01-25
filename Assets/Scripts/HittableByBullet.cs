@@ -22,6 +22,9 @@ public class HittableByBullet : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Bullet")) {
             Health -= 1;
+			if (GetComponent<Animator> ()) {
+				GetComponent<Animator> ().SetTrigger ("hit");
+			}
             Destroy(collision.gameObject);
         }
 
