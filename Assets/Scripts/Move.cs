@@ -35,13 +35,12 @@ public class Move : MonoBehaviour {
 			inFreeze = false;
 		}
 
-        if ((Input.GetKey(KeyCode.Space)|| Input.GetKey(KeyCode.Joystick1Button1)) && isGrounded && rigid.velocity.y <= 0)
+        if ((Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Joystick1Button1)) && isGrounded)
         {
-            rigid.velocity += new Vector3(0, 1, 0) * forceJump;
+            //rigid.velocity += new Vector3(0, 1, 0) * forceJump;
+			rigid.AddForce (Vector3.up * forceJump,ForceMode.VelocityChange);
+			isGrounded = false;
         }
-
-		isGrounded = Physics.Raycast (transform.position, Vector3.down, 1f);
-
 
     }
 
@@ -50,6 +49,8 @@ public class Move : MonoBehaviour {
 		if (!inFreeze && rigid.velocity.x < speed) {
 			rigid.AddForce (Vector3.right * accel, ForceMode.VelocityChange);
 		}
+
+		isGrounded = Physics.Raycast (transform.position, Vector3.down, 1.2f);
 
         Vector3 gravity = Vector3.down * gravityScale;
         rigid.AddForce(gravity, ForceMode.Acceleration);
