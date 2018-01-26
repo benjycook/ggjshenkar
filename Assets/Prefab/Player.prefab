@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093918134900216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.77, y: 1.312, z: 0}
+  m_LocalPosition: {x: -1.1, y: 0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4384898834255050}
@@ -350,8 +350,8 @@ MonoBehaviour:
   forceJump: 15
   anim: {fileID: 95215168351859986}
   audioSource: {fileID: 0}
-  jumpAudio: {fileID: 8300000, guid: 3d2342fe75a144d4a86ac92e0684d0b3, type: 3}
-  stopAudio: {fileID: 8300000, guid: cd1a97f1d501f3d4f9a5fdb86d10ad43, type: 3}
+  jumpAudio: {fileID: 8300000, guid: 4c3cf20c6ca148f41a7e0b36ead5d528, type: 3}
+  stopAudio: {fileID: 8300000, guid: b8bb8517503f33d46bf0e9f88c5c1290, type: 3}
 --- !u!114 &114518479723538774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -369,7 +369,8 @@ MonoBehaviour:
   bulletLifetime: 0.3
   anim: {fileID: 95215168351859986}
   audioSource: {fileID: 0}
-  shootAudio: {fileID: 8300000, guid: 0beddaa5f032fe94da9c6bab2066238e, type: 3}
+  shootAudio: {fileID: 8300000, guid: f8b9bac1b1fac2444b71a901ece5b659, type: 3}
+  staticLow: {fileID: 8300000, guid: 736f2c8eb842cb8498c03a62814d3ebf, type: 3}
 --- !u!135 &135550863057436398
 SphereCollider:
   m_ObjectHideFlags: 1
