@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
-
+    public AudioSource audioSource;
+    public AudioClip background;
     public static Game instance;
     public GameObject player;
     public int currentScene;
@@ -25,6 +26,7 @@ public class Game : MonoBehaviour {
     {
         Scene scene = SceneManager.GetActiveScene();
         currentScene = scene.buildIndex;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
